@@ -3,7 +3,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   files <- list.files(directory, full.names = TRUE);
   
   for (index in files) {
-    data <- rbind(data, read.csv(index))
+    data <- rbind(data, read.csv(index, comment.char = ""))
   }
   
   neededMonitors <- subset(data, ID %in% id);
